@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Exercicio 2</h2>
+
+  <input [(ngModel)]="texto">
+  <div *ngIf="!texto">
+    <img style="margin: 5.çpx;" width="30px" height="30px" src="https://media.istockphoto.com/id/504920936/pt/vetorial/%C3%ADcone-erro-bot%C3%A3o-eliminar-avaria-eliminar-x.jpg?s=170667a&w=0&k=20&c=Lq786PIzSxJ280vcP2CguOti8rQB0UtzDlNUc2Qs9kk=">
+  </div>
+
+  <div *ngIf="texto">
+    <img width="50px" height="50px" src="https://static.vecteezy.com/system/resources/previews/002/743/514/original/green-check-mark-icon-in-a-circle-free-vector.jpg">
+  </div>
+</body>
+</html>

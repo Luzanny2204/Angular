@@ -1,0 +1,7 @@
+<h1>Exercicio 03</h1>
+
+<input type="number" [(ngModel)]="numero">
+
+<div *ngIf="numero > 0">Numero positivo</div> <!--o * indica que es un adirectriz estructurada-->
+<div *ngIf="numero < 0">Numero negativo</div>
+<div *ngIf="numero == 0">Zero</div>

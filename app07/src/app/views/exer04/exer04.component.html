@@ -1,0 +1,9 @@
+<h1>Exercicio 04</h1>
+
+<select [(ngModel)]="tipoContato">
+  <option value="WhatsApp">WhatsApp</option>
+  <option value="Email">Email</option>
+</select><br><br>
+
+<input *ngIf="tipoContato == 'Email'" type="email" placeholder="Email">
+<input *ngIf="tipoContato == 'WhatsApp'" type="tel" placeholder="WhatsApp">
