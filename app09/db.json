@@ -1,0 +1,23 @@
+{
+  "cliente": [
+    {
+      "nome": "Luzanny",
+      "cpf": "123456789123",
+      "id": 2
+    }
+  ],
+  "produto": [
+    {
+      "nome": "Botas",
+      "codigo": "1254788",
+      "tipo": "zapato",
+      "id": 1
+    },
+    {
+      "nome": "Salto vermelho",
+      "codigo": "1254788",
+      "tipo": "zapato",
+      "id": 2
+    }
+  ]
+}
