@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/model/cliente';
 import { ClienteService } from 'src/app/service/cliente.service';
 
@@ -7,13 +7,17 @@ import { ClienteService } from 'src/app/service/cliente.service';
   templateUrl: './cliente.component.html',
   styleUrls: ['./cliente.component.css']
 })
-export class ClienteComponent {
+export class ClienteComponent implements OnInit {
 
 
   listaCliente: Cliente[]=[];
   cliente= new Cliente();
-
+  estaEditando=false;
   constructor(private clienteService: ClienteService){}
+
+  ngOnInit(): void {
+    this.listar();
+  }
 
   listar(){
     this.clienteService.listar().subscribe(clientes => {
@@ -25,6 +29,35 @@ export class ClienteComponent {
     this.clienteService.inserir(this.cliente).subscribe(clientes => {
       this.listar();
     })
+  }
+
+  remover(id:number){
+    this.clienteService.excluir(id).subscribe(()=>{
+      this.listar();
+    });
+  }
+  atualizar(){
+    this.clienteService.atualizar(this.cliente).subscribe(cliente=>{
+      this.listar;
+    });
+  }
+
+  salvar(){
+    if(this.estaEditando){
+      this.atualizar();
+    }
+    else{
+      this.inserir();
+    }
+  }
+  selecionar(cliente:Cliente){
+    this.cliente = cliente;
+    this.estaEditando = true;
+
+  }
+  cancelar(){
+    this.estaEditando = false;
+    this.cliente = new Cliente();
   }
 }
 //subcribe: quiero saber lo que regresas o retornas, o que me des una respuesta

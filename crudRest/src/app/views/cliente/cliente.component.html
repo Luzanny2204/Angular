@@ -2,7 +2,7 @@
 
 <ul>
   <li *ngFor="let cliente of listaCliente">
-    {{cliente.nome}}
+    {{cliente.nome}} <span (click)="remover(cliente.id)">x</span>
 
   </li>
 </ul>
@@ -12,4 +12,6 @@
   <input type="text" [(ngModel)]="cliente.cpf">
   <br>
   <button (click)="inserir()">Salvar</button>
+  <br>
+  <button (click)="cancelar()">Cancelar</button>
 </div>
