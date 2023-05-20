@@ -1,0 +1,15 @@
+<button (click)="listar()">Listar</button>
+
+<ul>
+  <li *ngFor="let cliente of listaCliente">
+    {{cliente.nome}}
+
+  </li>
+</ul>
+<div>
+  <input type="text" [(ngModel)]="cliente.nome">
+  <br>
+  <input type="text" [(ngModel)]="cliente.cpf">
+  <br>
+  <button (click)="inserir()">Salvar</button>
+</div>
